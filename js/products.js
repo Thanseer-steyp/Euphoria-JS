@@ -59,38 +59,38 @@ const MenurlParams = new URLSearchParams(window.location.search);
             MenproductDetail.innerHTML = `
             <div class="left">
                 <ul>
-                    <li><img src="${Menproduct.image}" alt=""></li>
-                    <li><img src="./assets/img-3.jpg" alt=""></li>
-                    <li><img src="./assets/img-24.jpg" alt=""></li>
+                    <li><img src="${Menproduct.image}" alt="Product Image"></li>
+                    <li><img src="./assets/img-3.jpg" alt="Product Image"></li>
+                    <li><img src="./assets/img-24.jpg" alt="Product Image"></li>
                 </ul>
-                <img class="up" src="./assets/arrow-down.svg" alt="">
-                <img class="down" src="./assets/arrow-down.svg" alt="">
+                <img class="up" src="./assets/arrow-down.svg" alt="upArrow-Btn">
+                <img class="down" src="./assets/arrow-down.svg" alt="downArrow-Btn">
             </div>
-            <div class="detailedImage"><img src="${Menproduct.image}" alt=""></div>
+            <div class="detailedImage"><img src="${Menproduct.image}" alt="Product Image"></div>
             <div class="right">
                 <div class="path">
                     <small>Shop</small>
                     <div class="arrow">
-                        <img src="./assets/right-arrow-light.svg" alt="">
+                        <img src="./assets/right-arrow-light.svg" alt="rightArrow-Btn">
                     </div>
                     <small>${Menproduct.genderCategory}</small>
                     <div class="arrow">
-                        <img src="./assets/right-arrow-light.svg" alt="">
+                        <img src="./assets/right-arrow-light.svg" alt="rightArrow-Btn">
                     </div>
                     <small>${Menproduct.clothSection}</small>
                 </div>
                 <h2>${Menproduct.name}</h2>
                 <div class="ratings">
                     <div class="rating">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
                         <small>3.5</small>
                     </div>
                     <div class="review">
-                        <img src="./assets/message.svg" alt="">
+                        <img src="./assets/message.svg" alt="Comment Icon">
                         <small>120 comment</small>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ const MenurlParams = new URLSearchParams(window.location.search);
                             <small>Select Size</small>
         
                             <small class="guide">Size Guide</small>
-                            <img src="./assets/arrow-right.svg" alt="">
+                            <img src="./assets/arrow-right.svg" alt="rightArrow-Btn">
                         
                     </div>
                     <div class="bottom">
@@ -124,7 +124,7 @@ const MenurlParams = new URLSearchParams(window.location.search);
                 </div>
                 <div class="buy">
                     <div class="cart">
-                        <img src="./assets/cart-1.svg" alt="">Add to cart
+                        <img src="./assets/cart-1.svg" alt="Cart">Add to cart
                     </div>
                     <div class="price">
                     ${Menproduct.price}
@@ -134,25 +134,25 @@ const MenurlParams = new URLSearchParams(window.location.search);
                     <ul>
                         <li>
                             <div class="img">
-                                <img src="./assets/credit card.svg" alt="">
+                                <img src="./assets/credit card.svg" alt="Credit Card Icon">
                             </div>
                             Secure payment
                         </li>
                         <li>
                             <div class="img">
-                                <img src="./assets/Size&Fit.svg" alt="">
+                                <img src="./assets/Size&Fit.svg" alt="Sizes Icon">
                             </div>
                             Size & Fit
                         </li>
                         <li>
                             <div class="img">
-                                <img src="./assets/truck.svg" alt="">
+                                <img src="./assets/truck.svg" alt="Truck Icon">
                             </div>
                             Free Shipping
                         </li>
                         <li>
                             <div class="img">
-                                <img src="./assets/Free-Shipping&Returns.svg" alt="">
+                                <img src="./assets/Free-Shipping&Returns.svg" alt="Shipping Icon">
                             </div>
                             Free Shipping & Returns
                         </li>
@@ -182,38 +182,38 @@ const MenurlParams = new URLSearchParams(window.location.search);
             WomenproductDetail.innerHTML = `
             <div class="left">
                 <ul>
-                    <li><img src="${Womenproduct.image}" alt=""></li>
-                    <li><img src="./assets/img-16.jpg" alt=""></li>
-                    <li><img src="./assets/img-23.jpg" alt=""></li>
+                    <li><img src="${Womenproduct.image}" alt="Product Image"></li>
+                    <li><img src="./assets/img-16.jpg" alt="Product Image"></li>
+                    <li><img src="./assets/img-23.jpg" alt="Product Image"></li>
                 </ul>
-                <img class="up" src="./assets/arrow-down.svg" alt="">
-                <img class="down" src="./assets/arrow-down.svg" alt="">
+                <img class="up" src="./assets/arrow-down.svg" alt="upArrow-Btn">
+                <img class="down" src="./assets/arrow-down.svg" alt="downArrow-Btn">
             </div>
-            <div class="detailedImage"><img src="${Womenproduct.image}" alt=""></div>
+            <div class="detailedImage"><img src="${Womenproduct.image}" alt="Product Image"></div>
             <div class="right">
                 <div class="path">
                     <small>Shop</small>
                     <div class="arrow">
-                        <img src="./assets/right-arrow-light.svg" alt="">
+                        <img src="./assets/right-arrow-light.svg" alt="rightArrow-Btn">
                     </div>
                     <small>${Womenproduct.genderCategory}</small>
                     <div class="arrow">
-                        <img src="./assets/right-arrow-light.svg" alt="">
+                        <img src="./assets/right-arrow-light.svg" alt="rightArrow-Btn">
                     </div>
                     <small>${Womenproduct.clothSection}</small>
                 </div>
                 <h2>${Womenproduct.name}</h2>
                 <div class="ratings">
                     <div class="rating">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
-                        <img src="./assets/star.svg" alt="">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
+                        <img src="./assets/star.svg" alt="Rating Star">
                         <small>3.5</small>
                     </div>
                     <div class="review">
-                        <img src="./assets/message.svg" alt="">
+                        <img src="./assets/message.svg" alt="Comment Icon">
                         <small>120 comment</small>
                     </div>
                 </div>
@@ -223,7 +223,7 @@ const MenurlParams = new URLSearchParams(window.location.search);
                             <small>Select Size</small>
         
                             <small class="guide">Size Guide</small>
-                            <img src="./assets/arrow-right.svg" alt="">
+                            <img src="./assets/arrow-right.svg" alt="rightArrow-Btn">
                         
                     </div>
                     <div class="bottom">
@@ -247,7 +247,7 @@ const MenurlParams = new URLSearchParams(window.location.search);
                 </div>
                 <div class="buy">
                     <div class="cart">
-                        <img src="./assets/cart-1.svg" alt="">Add to cart
+                        <img src="./assets/cart-1.svg" alt="Cart">Add to cart
                     </div>
                     <div class="price">
                     ${Womenproduct.price}
@@ -257,25 +257,25 @@ const MenurlParams = new URLSearchParams(window.location.search);
                     <ul>
                         <li>
                             <div class="img">
-                                <img src="./assets/credit card.svg" alt="">
+                                <img src="./assets/credit card.svg" alt="Credit Card Icon">
                             </div>
                             Secure payment
                         </li>
                         <li>
                             <div class="img">
-                                <img src="./assets/Size&Fit.svg" alt="">
+                                <img src="./assets/Size&Fit.svg" alt="Sizes Icon">
                             </div>
                             Size & Fit
                         </li>
                         <li>
                             <div class="img">
-                                <img src="./assets/truck.svg" alt="">
+                                <img src="./assets/truck.svg" alt="truck Icon">
                             </div>
                             Free Shipping
                         </li>
                         <li>
                             <div class="img">
-                                <img src="./assets/Free-Shipping&Returns.svg" alt="">
+                                <img src="./assets/Free-Shipping&Returns.svg" alt="Shipping Icon">
                             </div>
                             Free Shipping & Returns
                         </li>
@@ -401,4 +401,18 @@ document.addEventListener("DOMContentLoaded" , function() {
 
     searchBtn.addEventListener("click" , showSearch)
 })
-        
+
+
+// HEADER MENU CLICK ACTIVE
+
+const menuItems = document.querySelectorAll("header ul.middle li a");
+
+menuItems.forEach(link => {
+    link.addEventListener("click", function (event) {
+        event.preventDefault(); 
+
+        menuItems.forEach(item => item.parentElement.classList.remove("active"));
+
+        this.parentElement.classList.add("active");
+    });
+});

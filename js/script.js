@@ -149,7 +149,7 @@ showSlide(currentIndex);
         { id: 4, name: "Polo T-Shirts", image: "./assets/img-8.jpg" },
         { id: 5, name: "Hoodies & Sweatshirt", image: "./assets/img-9.jpg" },
         { id: 6, name: "Jeans", image: "./assets/img-10.jpg" },
-        { id: 7, name: "Active wear", image: "./assets/img-1.jpg" },
+        { id: 7, name: "Activewear", image: "./assets/img-1.jpg" },
         { id: 8, name: "Boxers", image: "./assets/img-11.jpg" }
     ];
 
@@ -159,14 +159,14 @@ showSlide(currentIndex);
         Menproducts.forEach(Menproduct => {
             let li = document.createElement("li");
             li.innerHTML = `<div class="productImage" onclick="goto(${Menproduct.id})">
-                                <img src="${Menproduct.image}" alt="">
+                                <img src="${Menproduct.image}" alt="Product Image">
                             </div>
                             <div class="productDetails">
                                 <div class="left">
                                     <h4>${Menproduct.name}</h4>
                                     <a href="javascript:void(0)" onclick="goto(${Menproduct.id})">Explore Now!</a>
                                 </div>
-                                <div class="right"><a href="javascript:void(0)" onclick="goto(${Menproduct.id})"><img src="./assets/arrow-right.svg" alt=""></a></div>
+                                <div class="right"><a href="javascript:void(0)" onclick="goto(${Menproduct.id})"><img src="./assets/arrow-right.svg" alt="rightArrow-Btn"></a></div>
                             </div>`;
             Menul.appendChild(li);
         });
@@ -186,14 +186,14 @@ if (Womenul) {
     Womenproducts.forEach(Womenproduct => {
         let li = document.createElement("li");
         li.innerHTML = `<div class="productImage" onclick="goto(${Womenproduct.id})">
-                            <img src="${Womenproduct.image}" alt="">
+                            <img src="${Womenproduct.image}" alt="Product Image">
                         </div>
                         <div class="productDetails">
                             <div class="left">
                                 <h4>${Womenproduct.name}</h4>
                                 <a href="javascript:void(0)" onclick="goto(${Womenproduct.id})">Explore Now!</a>
                             </div>
-                            <div class="right"><a href="javascript:void(0)" onclick="goto(${Womenproduct.id})"><img src="./assets/arrow-right.svg" alt=""></a></div>
+                            <div class="right"><a href="javascript:void(0)" onclick="goto(${Womenproduct.id})"><img src="./assets/arrow-right.svg" alt="rightArrow-Btn"></a></div>
                         </div>`;
         Womenul.appendChild(li);
     });
@@ -259,23 +259,42 @@ document.addEventListener("DOMContentLoaded" , function() {
 
 // FEEDBACK INDICATOR
 
-document.addEventListener("DOMContentLoaded", function () {
-    const feedbacks = document.querySelector(".feedbacks");
-    const dots = document.querySelectorAll("section#feedback-section .dot");
 
-    dots[0].classList.add("actives");
+const carousel = document.querySelector('section#feedback-section div.carousel');
+const dotss = document.querySelectorAll('section#feedback-section span.dot');
+let currentIndexx = 0;
 
-    dots.forEach(dot => {
-        dot.addEventListener("click", () => {
-            const index = parseInt(dot.getAttribute("data-index"));
-            
-            feedbacks.style.transform = `translateX(-${index * 33.33}%)`;
-            
-            dots.forEach(d => d.classList.remove("actives"));
-            dot.classList.add("actives");
-        });
-    });
+function currentSlidefd(index) {
+  const slideWidth = document.querySelector('section#feedback-section div.carousel div.carousel-item').offsetWidth;
+  carousel.scrollLeft = slideWidth * index;
+  
+
+  dotss.forEach(dot => dot.classList.remove('actives'));
+  dotss[index].classList.add('actives');
+  
+  currentIndexx = index;
+}
+
+currentSlidefd(0);
+
+setInterval(() => {
+  currentIndexx = (currentIndexx + 1) % dotss.length;
+  currentSlidefd(currentIndexx);
+}, 4000);
+
+carousel.addEventListener('scroll', () => {
+  const slideWidth = document.querySelector('section#feedback-section div.carousel div.carousel-item').offsetWidth;
+  const index = Math.round(carousel.scrollLeft / slideWidth);
+  
+  if (index !== currentIndexx) {
+    dotss.forEach(dot => dot.classList.remove('actives'));
+    if (dotss[index]) {
+      dotss[index].classList.add('actives');
+      currentIndexx = index;
+    }
+  }
 });
+
 
 
 
