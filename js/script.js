@@ -261,41 +261,69 @@ document.addEventListener("DOMContentLoaded" , function() {
 
 
 const carousel = document.querySelector('section#feedback-section div.carousel');
-const dotss = document.querySelectorAll('section#feedback-section span.dot');
+const dotss = document.querySelectorAll('section#feedback-section span.dotfd');
 let currentIndexx = 0;
+let isAutoScrolling = false;
+let autoScrollInterval;
 
-function currentSlidefd(index) {
+function updateDots(index) {
+  dotss.forEach(dot => dot.classList.remove('activesfd'));
+  dotss[index].classList.add('activesfd');
+  currentIndexx = index;
+}
+
+function scrollToSlide(index) {
   const slideWidth = document.querySelector('section#feedback-section div.carousel div.carousel-item').offsetWidth;
   carousel.scrollLeft = slideWidth * index;
-  
+}
 
-  dotss.forEach(dot => dot.classList.remove('actives'));
-  dotss[index].classList.add('actives');
+function currentSlidefd(index) {
+  isAutoScrolling = true;
   
-  currentIndexx = index;
+  updateDots(index);
+
+  scrollToSlide(index);
+  
+  setTimeout(() => {
+    isAutoScrolling = false;
+  }, 450);
 }
 
 currentSlidefd(0);
 
-setInterval(() => {
-  currentIndexx = (currentIndexx + 1) % dotss.length;
-  currentSlidefd(currentIndexx);
+autoScrollInterval = setInterval(() => {
+  const nextIndex = (currentIndexx + 1) % dotss.length;
+  currentSlidefd(nextIndex);
 }, 4000);
 
-carousel.addEventListener('scroll', () => {
-  const slideWidth = document.querySelector('section#feedback-section div.carousel div.carousel-item').offsetWidth;
-  const index = Math.round(carousel.scrollLeft / slideWidth);
-  
-  if (index !== currentIndexx) {
-    dotss.forEach(dot => dot.classList.remove('actives'));
-    if (dotss[index]) {
-      dotss[index].classList.add('actives');
-      currentIndexx = index;
-    }
-  }
+
+dotss.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+
+    clearInterval(autoScrollInterval);
+    
+    currentSlidefd(index);
+    
+    autoScrollInterval = setInterval(() => {
+      const nextIndex = (currentIndexx + 1) % dotss.length;
+      currentSlidefd(nextIndex);
+    }, 4000);
+  });
 });
 
 
+carousel.addEventListener('scroll', () => {
+  if (isAutoScrolling) {
+    return; 
+  }
+  
+  const slideWidth = document.querySelector('section#feedback-section div.carousel div.carousel-item').offsetWidth;
+  const index = Math.round(carousel.scrollLeft / slideWidth);
+  
+  if (index !== currentIndexx && index >= 0 && index < dotss.length) {
+    updateDots(index);
+  }
+});
 
 
 // SEARCHBAR ACTIVE

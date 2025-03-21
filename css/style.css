@@ -1429,17 +1429,15 @@ section#feedback-section section.wrapper section.feedback-section div.dots-cont 
     width: max-content;
     margin-top: 30px;
 }
-section#feedback-section section.wrapper section.feedback-section div.dots-cont span.dot {
+section#feedback-section section.wrapper section.feedback-section div.dots-cont span.dotfd {
     width: 10px;
     height: 10px;
     background-color: #bebcbd;
-    opacity: 50%;
     border-radius: 50%;
     cursor: pointer;
 }
-section#feedback-section section.wrapper section.feedback-section div.dots-cont span.dot.actives {
+section#feedback-section section.wrapper section.feedback-section div.dots-cont span.dotfd.activesfd {
     background-color: black;
-    opacity: 100%;
 }
 
 
